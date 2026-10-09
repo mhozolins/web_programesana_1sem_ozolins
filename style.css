@@ -1,3 +1,4 @@
+
 body {
     background-color: white;
     color: black;
@@ -9,12 +10,29 @@ header {
     background-color: rgb(27, 67, 10);
     color: white;
     padding: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+header h1 {
+    margin: 0;
+    overflow-wrap: anywhere;
 }
 
 nav {
     background-color: #dddddd;
     padding: 10px;
+}
+
+nav ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 nav li {
@@ -33,6 +51,11 @@ nav li a:hover {
 main {
     max-width: 900px;
     margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 20px;
 }
 
 section {
@@ -40,7 +63,9 @@ section {
     border: 10px solid orange;
     border-radius: 10px;
     padding: 15px;
-    margin: 20px;
+    box-sizing: border-box;
+    flex: 1 1 400px;
+    min-width: 0;
 }
 
 h1 {
@@ -52,10 +77,6 @@ h2 {
     font-family: "Times New Roman", sans-serif;
     font-size: 24px;
     text-align: center;
-    color: blue;
-}
-
-h2 {
     color: lime;
 }
 
@@ -67,7 +88,7 @@ p {
 }
 
 .izcelts {
-    color: Blue;
+    color: blue;
     font-weight: bold;
 }
 
@@ -85,6 +106,7 @@ p {
 
 article {
     width: 280px;
+    max-width: 100%;
     padding: 15px;
     border: 4px solid black;
     box-sizing: border-box;
@@ -93,21 +115,73 @@ article {
 table {
     border-collapse: collapse;
     border: 2px solid red;
+    max-width: 100%;
 }
 
 th,
 td {
     font-family: "Times New Roman";
-    padding: 25px;
+    padding: 15px;
+    overflow-wrap: anywhere;
 }
 
-img {
-    margin: 10px;
+.vizitkarte {
+    flex: 0 1 160px;
+    width: 160px;
+    max-width: 100%;
+    padding: 10px 12px;
+    border: 2px solid orange;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px gray;
+    background-color: white;
+}
+
+.kartites {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 15px;
+    flex: 1 1 100%;
+}
+
+.kartite {
+    flex: 1 1 180px;
+    padding: 15px;
+    border: 2px solid green;
+    border-radius: 10px;
+    background-color: #eeeeee;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.galerija {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.galerija img {
+    flex: 1 1 220px;
+    width: 220px;
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    min-width: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 300px;
 }
 
 input,
 textarea {
     padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 input[type="email"] {
@@ -119,6 +193,11 @@ textarea:focus {
     outline: 2px solid #1a5fb4;
 }
 
+button {
+    padding: 10px;
+    cursor: pointer;
+}
+
 footer {
     background-color: rgb(40, 40, 40);
     color: white;
@@ -126,6 +205,65 @@ footer {
 }
 
 footer p {
+    color: white;
+}
 
-     color: white;
+@media (max-width: 390px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    header h1 {
+        font-size: 26px;
+        margin: 0;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    nav li {
+        margin: 5px;
+    }
+
+    main {
+        flex-direction: column;
+        padding: 0 10px;
+        gap: 15px;
+    }
+
+    section {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+
+    .vizitkarte {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+
+    .kartites {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .kartite {
+        flex: 1 1 auto;
+    }
+
+    .galerija {
+        flex-direction: column;
+    }
+
+    .galerija img {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+
+    form {
+        width: 100%;
+    }
 }

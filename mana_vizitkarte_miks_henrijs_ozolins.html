@@ -1,26 +1,28 @@
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>Mana Vizitkarte</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+
 <header>
     <h1>Mani Sauc Miks Henrijs Ozolins</h1>
+
+    <nav>
+        <ul>
+            <li><a href="#par-mani">Par mani</a></li>
+            <li><a href="#hobiji">Mani Hobiji</a></li>
+            <li><a href="#bildes">BILDES</a></li>
+        </ul>
+    </nav>
 </header>
 
-<section>
-<nav>
-    <ul>
-        <li><a href="#par-mani">Par mani</a></li>
-        <li><a href="#hobiji">Mani Hobiji</a></li>
-        <li><a href="#bildes">BILDES</a></li>
-    </ul>
-</nav>
-</section>
 
 <main>
 
@@ -46,8 +48,8 @@
         <p id="specialais" class="teksts">
             Mani sauc Miks. Es macos un interesejos par programmesanu,
             automasinam un motosportu. Brivaja laika man patik spelet
-            videospeles, braukt ar ATV un skatities WRC. Mans lielakais
-            sapnis ir klut par WRC pilotu.
+            videospeles, braukt ar ATV un skatities WRC.
+            Mans lielakais sapnis ir klut par WRC pilotu.
         </p>
     </article>
 </section>
@@ -88,32 +90,58 @@
     </table>
 </section>
 
+
+<section class="vizitkarte">
+    <h2>Mana vizitkarte</h2>
+    <p>Miks Henrijs Ozolins</p>
+    <p>Toposais programmetajs</p>
+    <p>WRC un autosporta fans</p>
+</section>
+
+
+<section class="kartites">
+    <div class="kartite">
+        <h3>Programmesana</h3>
+        <p>Man patik macities programmet.</p>
+    </div>
+
+    <div class="kartite">
+        <h3>WRC</h3>
+        <p>Mans sapnis ir klut par WRC pilotu.</p>
+    </div>
+
+    <div class="kartite">
+        <h3>ATV</h3>
+        <p>Brivaja laika braukaju ar kvadraciklu.</p>
+    </div>
+</section>
+
+
 <section id="bildes">
     <h2>Bildes</h2>
 
-    <img src="https://img.lente.lv/thumbnails/post_image/Martins-Sesks-ar-M-Sport-startes-septinos-WRC-posmos-2026-gada.webp"
-    alt="Martins Sesks WRC rallija automasina"
-    height="200"
-    width="350">
+    <div class="galerija">
+        <img src="https://img.lente.lv/thumbnails/post_image/Martins-Sesks-ar-M-Sport-startes-septinos-WRC-posmos-2026-gada.webp"
+        alt="Martins Sesks WRC rallija automasina">
 
-    <img src="https://cdpcdn.dx1app.com/products/USA/CA/2025/ATV/ATVUTIL/OUTLANDER_X_MR_1000R/49/GRANITE_GREY_-_LEGION_RED/2000000013_480px.jpg"
-    alt="Can-Am Outlander kvadracikls"
-    height="200"
-    width="350">
+        <img src="https://cdpcdn.dx1app.com/products/USA/CA/2025/ATV/ATVUTIL/OUTLANDER_X_MR_1000R/49/GRANITE_GREY_-_LEGION_RED/2000000013_480px.jpg"
+        alt="Can-Am Outlander kvadracikls">
+    </div>
 </section>
+
 
 <section>
     <h2>Kontaktforma</h2>
 
     <form>
-        <label for="name">Vards:</label><br>
-        <input type="text" id="name" name="name"><br><br>
+        <label for="name">Vards:</label>
+        <input type="text" id="name" name="name">
 
-        <label for="email">Epasts:</label><br>
-        <input type="email" id="email" name="email"><br><br>
+        <label for="email">Epasts:</label>
+        <input type="email" id="email" name="email">
 
-        <label for="message">Zina:</label><br>
-        <textarea id="message" name="message"></textarea><br><br>
+        <label for="message">Zina:</label>
+        <textarea id="message" name="message"></textarea>
 
         <button type="submit">Nosutit</button>
     </form>
