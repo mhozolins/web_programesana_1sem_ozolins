@@ -49,8 +49,9 @@ nav li a:hover {
 }
 
 main {
-    max-width: 900px;
+    max-width: 1400px;
     margin: 20px auto;
+    padding: 0 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -155,19 +156,32 @@ td {
     box-sizing: border-box;
 }
 
+#bildes {
+    flex: 1 1 100%;
+    width: 100%;
+}
+
 .galerija {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
+    grid-auto-flow: row dense;
 }
 
 .galerija img {
-    flex: 1 1 220px;
-    width: 220px;
-    max-width: 100%;
-    height: 200px;
+    display: block;
+    width: 100%;
+    height: 280px;
     object-fit: cover;
+    border-radius: 10px;
     min-width: 0;
+}
+
+.galerija img.liela {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    width: 100%;
+    height: 100%;
 }
 
 form {
@@ -206,6 +220,22 @@ footer {
 
 footer p {
     color: white;
+}
+
+@media (max-width: 800px) {
+    .galerija {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .galerija img {
+        height: 230px;
+    }
+
+    .galerija img.liela {
+        grid-column: 1 / 3;
+        grid-row: auto;
+        height: 350px;
+    }
 }
 
 @media (max-width: 390px) {
@@ -255,12 +285,17 @@ footer p {
     }
 
     .galerija {
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
 
     .galerija img {
-        flex: 1 1 auto;
-        width: 100%;
+        height: 230px;
+    }
+
+    .galerija img.liela {
+        grid-column: auto;
+        grid-row: auto;
+        height: 230px;
     }
 
     form {
