@@ -1,68 +1,60 @@
 
-console.log("Skripts darbojas!");
+console.log("JavaScript works!");
 
-const ievade = document.getElementById("jauns");
-const poga = document.getElementById("pievienot");
-const saraksts = document.getElementById("saraksts");
-const zina = document.getElementById("zina");
-const skaits = document.getElementById("skaits");
-const dzestVisus = document.getElementById("dzestVisus");
+const input = document.getElementById("jauns");
+const button = document.getElementById("pievienot");
+const list = document.getElementById("saraksts");
+const message = document.getElementById("zina");
+const count = document.getElementById("skaits");
 
-function atjaunotSkaitu() {
-    skaits.textContent = "Uzdevumi: " + saraksts.children.length;
-}
+button.addEventListener("click", function() {
+    console.log(input.value);
 
-function pievienotUzdevumu() {
-    console.log(ievade.value);
+    const text = input.value.trim();
 
-    const teksts = ievade.value.trim();
-
-    if (teksts === "") {
-        zina.textContent = "Ieraksti uzdevumu!";
+    if (text === "") {
+        message.textContent = "Enter a task!";
         return;
     }
 
-    zina.textContent = "";
+    message.textContent = "";
 
     const li = document.createElement("li");
-    li.textContent = teksts;
+    li.textContent = text;
+    list.appendChild(li);
 
-    saraksts.appendChild(li);
+    input.value = "";
+    input.focus();
 
-    ievade.value = "";
-    ievade.focus();
-
-    li.addEventListener("click", () => {
+    li.addEventListener("click", function() {
         li.classList.toggle("izdarits");
     });
 
-    const dzest = document.createElement("button");
-    dzest.textContent = "Dzēst";
-    dzest.classList.add("dzest");
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    li.appendChild(deleteButton);
 
-    li.appendChild(dzest);
-
-    dzest.addEventListener("click", (event) => {
+    deleteButton.addEventListener("click", function(event) {
         event.stopPropagation();
         li.remove();
-        atjaunotSkaitu();
+        count.textContent = "Tasks: " + list.children.length;
     });
 
-    atjaunotSkaitu();
-}
+    count.textContent = "Tasks: " + list.children.length;
+});
 
-poga.addEventListener("click", pievienotUzdevumu);
-
-ievade.addEventListener("keydown", function(event) {
+input.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
-        poga.click();
+        button.click();
     }
 });
 
-dzestVisus.addEventListener("click", () => {
-    const izdaritie = document.querySelectorAll(".izdarits");
+document.getElementById("dzestVisus").addEventListener("click", function() {
+    const completed = document.querySelectorAll(".izdarits");
 
-    izdaritie.forEach(li => li.remove());
+    completed.forEach(function(li) {
+        li.remove();
+    });
 
-    atjaunotSkaitu();
+    count.textContent = "Tasks: " + list.children.length;
 });
